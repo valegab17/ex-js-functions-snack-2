@@ -5,4 +5,21 @@
     Ogni operazione deve essere eseguita in sequenza con un ritardo uguale al tempo di intervallo.
  */
 
-    
+    function sequenzaOperazioni(operazioni, intervallo)
+    {
+        return(
+            operazioni.forEach((operazione, index)=>{
+                setTimeout(() => {
+                    operazione();
+                }, intervallo * index)
+            })
+        )
+        
+
+    }
+
+    sequenzaOperazioni([
+  () => console.log("Operazione 1"),
+  () => console.log("Operazione 2"),
+  () => console.log("Operazione 3")
+], 2000);
